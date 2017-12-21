@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content_frame"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/viewContainer"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/standardView"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/profilePicSV"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:padding="8dp"
+                    android:layout_height="wrap_content">
+
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="Screen Name:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/uniqueSV"
+                            android:text="Unique Id"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="First Name:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/first_nameSV"
+                            android:text="Firstname"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="Last Name:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/last_nameSV"
+                            android:text="Lastname"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="Nickname:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/nicknameSV"
+                            android:text="Nickname"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="Email:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/emailSV"
+                            android:text="email"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="Location:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/locationSV"
+                            android:text="location"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="Profession:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/professionSV"
+                            android:text="Profession"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="About Me:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/about_meSV"
+                            android:text="aboutme"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+                    <TableRow
+                        android:padding="2dp">
+                        <TextView
+                            android:text="Interests:"
+                            android:textStyle="bold"
+                            android:layout_weight="1"
+                            android:textSize="18sp"/>
+
+                        <TextView
+                            android:id="@+id/interestsSV"
+                            android:text="interests"
+                            android:layout_weight="2"
+                            android:textSize="18sp"/>
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editView"
+                android:visibility="gone"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/changeProfilePicBtn"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/profilePic"
+                        android:layout_width="50dp"
+                        android:layout_gravity="center"
+                        android:layout_height="50dp" />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Change"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/first_name" />
+
+                <EditText
+                    android:id="@+id/last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/last_name" />
+
+                <EditText
+                    android:id="@+id/nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nickname" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/location" />
+
+                <EditText
+                    android:id="@+id/profession"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/profession" />
+
+                <EditText
+                    android:id="@+id/about_me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/about" />
+
+                <EditText
+                    android:id="@+id/interests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Interest" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonPanel"
+            android:layout_width="match_parent"
+            android:layout_below="@id/viewContainer"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/update_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/update" />
+
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/timelineListView"
+            android:layout_below="@id/buttonPanel"
+            android:scrollbars="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item  android:id="@+id/friendMenu"
+        android:title="My Friends"/>
+    <item  android:id="@+id/addFriendMenu"
+        android:title="Add Friend"/>
+    <item  android:id="@+id/incomingFriendReqMenu"
+        android:title="Incoming Friend Request"/>
+    <item  android:id="@+id/OutgoingFriendReqMenu"
+        android:title="Outgoing Friend Request"/>
+    <item  android:id="@+id/followedFriendMenu"
+        android:title="Followed Friends"/>
+</menu>
