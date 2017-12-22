@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item  android:id="@+id/friendMenu"
-        android:title="Gruplarım"/>
-    <item  android:id="@+id/addFriendMenu"
-        android:title="Tüm Gruplar"/>
-    <item  android:id="@+id/incomingFriendReqMenu"
-        android:title="Grup Oluştur"/>
+    <item  android:id="@+id/mygroupMenu"
+        android:title="Gruplarim"/>
+    <item  android:id="@+id/allgroupMenu"
+        android:title="Tum Gruplar"/>
+    <item  android:id="@+id/creategroupMenu"
+        android:title="Grup Olustur"/>
 
 </menu>

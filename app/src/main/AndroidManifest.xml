@@ -20,7 +20,8 @@
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/colorAccent" />
 
-        <activity android:name=".StartActivity"
+        <activity
+            android:name=".StartActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +38,6 @@
         <activity
             android:name=".PrivateMessageActivity"
             android:label="Instant chat" />
-
         <activity
             android:name=".CreatePostActivity"
             android:label="@string/title_activity_post" />
@@ -53,6 +53,8 @@
             </intent-filter>
         </service>
 
+        <activity android:name=".AddGroupActivity" />
+        <activity android:name=".AllGroupsActivity"></activity>
     </application>
 
 </manifest>

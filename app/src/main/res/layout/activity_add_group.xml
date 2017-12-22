@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cmpe.sjsu.socialawesome.AddGroupActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+    android:id="@+id/textViewgroupname"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Grup İsmi"
+        android:layout_marginStart="29dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/edittextgroupname"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/edittextgroupname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint=" Grup ismi "
+        android:layout_marginStart="29dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/buttoncreategroup"
+        app:layout_constraintLeft_toRightOf="@+id/textViewgroupname" />
+
+    <Button
+        android:id="@+id/buttoncreategroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Oluştur"
+        android:layout_marginStart="30dp"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="153dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/edittextgroupname" />
+
+
+</android.support.constraint.ConstraintLayout>
