@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/GraduationProject2.iml" filepath="$PROJECT_DIR$/GraduationProject2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Social-Awesome.iml" filepath="$PROJECT_DIR$/Social-Awesome.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bitbucket.iml" filepath="$PROJECT_DIR$/bitbucket.iml" />
