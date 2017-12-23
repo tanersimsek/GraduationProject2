@@ -19,6 +19,7 @@ import java.util.List;
 import cmpe.sjsu.socialawesome.Utils.DbUtils;
 import cmpe.sjsu.socialawesome.Utils.DbUtilsGroups;
 import cmpe.sjsu.socialawesome.Utils.FriendUtils;
+import cmpe.sjsu.socialawesome.Utils.GroupUtils;
 import cmpe.sjsu.socialawesome.Utils.UserAuth;
 import cmpe.sjsu.socialawesome.models.Group;
 import cmpe.sjsu.socialawesome.models.User;
@@ -97,7 +98,7 @@ public class GroupListAdapter  extends RecyclerView.Adapter<GroupListAdapter.Gro
                                     holder.acceptReqBtn.setText("Friends");
                                     holder.acceptReqBtn.setClickable(false);*/
                                     holder.addSelFriendBtn.setText("Join");
-                                    holder.addSelFriendBtn.setClickable(false);
+                             //       holder.addSelFriendBtn.setClickable(false);
                                 }
                             }
 
@@ -159,7 +160,7 @@ public class GroupListAdapter  extends RecyclerView.Adapter<GroupListAdapter.Gro
                     holder.addSelFriendBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            FriendUtils.addFriend(holder.vName.getContext(), 0, group.id);
+                            GroupUtils.joingroup(holder.vName.getContext(), 0, group.id);
                             holder.addSelFriendBtn.setText("Katıldınız");
                             holder.addSelFriendBtn.setClickable(false);
                         }
