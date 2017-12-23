@@ -1,10 +1,14 @@
 package cmpe.sjsu.socialawesome;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -97,6 +101,17 @@ public class GroupFragment extends SocialFragment {
             @Override
             public void onClick(View view) {
 //Tüm gruplar
+                SocialFragment fragment = new AllGroupsActivity();
+              SocialFragment  mCurrentFragment = new GroupFragment();
+
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction transaction = fm.beginTransaction();
+                transaction.replace(R.id.content_frame, fragment);
+                transaction.commit();
+
+             /*   Intent mainIntent = new Intent(getContext(), AllGroupsActivity.class);
+                //mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(mainIntent);*/
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {

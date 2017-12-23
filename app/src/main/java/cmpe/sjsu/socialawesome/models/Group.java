@@ -12,10 +12,10 @@ public class Group  implements Serializable {
     public String group_name;
     public static final String stringAll = "All";
     public static final String stringMine = "Mine";
-
+   public static final String memberslist = "members";
     public int status;
     public boolean notification;
-
+    public String id;
     public boolean pushNotification;
 
 

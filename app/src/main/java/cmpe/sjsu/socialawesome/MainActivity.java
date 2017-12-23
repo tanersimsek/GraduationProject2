@@ -168,6 +168,16 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.content_frame, fragment);
         transaction.commit();
     }
+    public void switchtoallgroupfrag()
+    {
+        SocialFragment fragment = new AllGroupsActivity();
+        mCurrentFragment = fragment;
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        transaction.replace(R.id.content_frame, fragment);
+        transaction.commit();
+    }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

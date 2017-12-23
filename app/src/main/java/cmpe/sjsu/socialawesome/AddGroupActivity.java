@@ -78,6 +78,7 @@ controlgrup=0;
                     group2.notification = true;
                     group2.token = token;
                     group2.pushNotification = true;
+                    group2.id=uuidString;
                     ref.child(uuidString).setValue(group2);
                     //  mProgressDialog.dismiss();
                     // UserAuth.getInstance().setCurrentUser(user);
