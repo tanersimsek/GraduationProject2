@@ -106,19 +106,19 @@ public class StartActivity extends AppCompatActivity {
         });
 
         mSubmitBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mProgressDialog.show();
-                if (!mIsLogin) {
-                    createAccount(mEmailEt.getText().toString(), mPasswordEt.getText().toString());
-                } else {
-                    signIn(mEmailEt.getText().toString(), mPasswordEt.getText().toString());
-                }
+        @Override
+        public void onClick(View v) {
+            mProgressDialog.show();
+            if (!mIsLogin) {
+                createAccount(mEmailEt.getText().toString(), mPasswordEt.getText().toString());
+            } else {
+                signIn(mEmailEt.getText().toString(), mPasswordEt.getText().toString());
             }
-        });
+        }
+    });
 
-        setupUI(true);
-    }
+    setupUI(true);
+}
 
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);

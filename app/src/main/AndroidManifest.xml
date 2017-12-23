@@ -21,7 +21,7 @@
             android:resource="@color/colorAccent" />
 
         <activity
-            android:name=".StartActivity"
+            android:name=".LoginActivity"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,7 +54,9 @@
         </service>
 
         <activity android:name=".AddGroupActivity" />
-        <activity android:name=".AllGroupsActivity"></activity>
+        <activity android:name=".AllGroupsActivity" />
+
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>
