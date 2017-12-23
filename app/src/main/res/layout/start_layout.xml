@@ -51,8 +51,7 @@
         android:layout_height="wrap_content"
         android:hint="4 digit verification ID"
         android:inputType="number"
-        android:maxLines="1"
-        android:visibility="gone" />
+        android:maxLines="1" />
 
     <Button
         android:id="@+id/submit"
