@@ -1,60 +1,60 @@
 <resources>
-    <string name="app_name">SocialAwesome</string>
-    <string name="login">Login</string>
-    <string name="password">Password</string>
-    <string name="confirm_password">Confirm Password</string>
-    <string name="nickname">Nick name</string>
-    <string name="location">Location</string>
-    <string name="profession">Profession</string>
-    <string name="about">About Me</string>
-    <string name="interest">Interest</string>
-    <string name="email">Email</string>
-    <string name="update">Update</string>
-    <string name="first_name">First name</string>
-    <string name="last_name">Last name</string>
-    <string name="signup">Sign up</string>
-    <string name="submit">Submit</string>
-    <string name="create_account">Create Account</string>
-    <string name="signin_text">Back To Login</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_post">Create New Post</string>
-    <string name="action_settings">Settings</string>
-    <string name="timeline">Timeline</string>
-    <string name="profile">Profile</string>
-    <string name="setting">Setting</string>
-    <string name="friends">Friends</string>
+    <string name="app_name">YüzKitabı:)</string>
+    <string name="login">Giriş</string>
+    <string name="password">Parola</string>
+    <string name="confirm_password">Parolayı Onayla</string>
+    <string name="nickname">Kullanıcı Adı</string>
+    <string name="location">Lokasyon</string>
+    <string name="profession">Meslek</string>
+    <string name="about">Hakkımda</string>
+    <string name="interest">İlgi Alanları</string>
+    <string name="email">Eposta</string>
+    <string name="update">Güncelle</string>
+    <string name="first_name">Ad</string>
+    <string name="last_name">Soyad</string>
+    <string name="signup">Kayıt Ol</string>
+    <string name="submit">Gönder</string>
+    <string name="create_account">Hesap Oluştur</string>
+    <string name="signin_text">Girişe Dön</string>
+    <string name="title_activity_main">Zaman Tüneli</string>
+    <string name="title_activity_post">Yeni Gönderi Oluştur</string>
+    <string name="action_settings">Ayarlar</string>
+    <string name="timeline">Zaman Tüneli</string>
+    <string name="profile">Profil</string>
+    <string name="setting">Ayarlar</string>
+    <string name="friends">Arkadaşlar</string>
     <string name="messenger">Messenger</string>
-    <string name="signout">Sign Out</string>
-    <string name="drawer_open">Drawer Open</string>
-    <string name="drawer_close">Drawer Close</string>
+    <string name="signout">Çıkış Yap</string>
+    <string name="drawer_open">Çekmece Açık</string>
+    <string name="drawer_close">Çekmece Kapalı</string>
 
     <string name="default_profile_pic">https://thumb10.shutterstock.com/display_pic_with_logo/1737244/149293433/stock-photo-anonymous-male-profile-picture-silhouette-profile-avatar-149293433.jpg</string>
-    <string name="hint_write_message">Write message here</string>
-    <string name="send">Send</string>
-    <string name="sent">Sent</string>
-    <string name="received">Received</string>
-    <string name="new_message">New Message</string>
+    <string name="hint_write_message">Mesajınızı Buraya Yazın</string>
+    <string name="send">Gönder</string>
+    <string name="sent">Gönderildi</string>
+    <string name="received">Alındı</string>
+    <string name="new_message">Yeni Mesaj</string>
     <string name="send_in_mail">Send In Mail</string>
-    <string name="start_chat">Start Chat</string>
+    <string name="start_chat">Sohbeti Başlar</string>
 
     <!--Toast message-->
     <string name="success_send_push">Push notification sent</string>
     <string name="failure_send_push">Fail to send push notification</string>
-    <string name="success_send_email">Email sent</string>
-    <string name="failure_send_email">Fail to send email</string>
+    <string name="success_send_email">Eposta Gönderildi</string>
+    <string name="failure_send_email">Eposta Gönderilemedi</string>
 
-    <string name="verify_account">Account Verified</string>
+    <string name="verify_account">Hesap Doğrulandı</string>
 
     <!--Dialog Message-->
-    <string name="delete">Delete</string>
-    <string name="cancel">Cancel</string>
+    <string name="delete">Sil</string>
+    <string name="cancel">İptal</string>
     <string name="delete_in_mail_message">Delete in mail message?</string>
 
     <!--Push notification message-->
     <string name="title_inmail">In Mail</string>
-    <string name="message_inmail">You have received a message from %1$s</string>
-    <string name="email_subject_inmail">You have received a message</string>
-    <string name="email_content_inmail">The message: \n\n Subject: %1$s \n\n Content: %2$s</string>
+    <string name="message_inmail">%1$s\'dan mesajınız var</string>
+    <string name="email_subject_inmail">Bir mesaj alındı</string>
+    <string name="email_content_inmail">Mesaj: \n\n Konu: %1$s \n\n İçerik: %2$s</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
