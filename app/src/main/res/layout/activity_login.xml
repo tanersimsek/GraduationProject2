@@ -47,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
+            android:text="tnrsmsk@yandex.com.tr"
             android:hint="Epostanızı yazınız" />
 
 
@@ -63,6 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
+            android:text="1234567"
             android:hint="Parolanızı yazınız"
             android:inputType="textPassword" />
 

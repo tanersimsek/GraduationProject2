@@ -67,6 +67,8 @@ public class GroupListAdapter  extends RecyclerView.Adapter<GroupListAdapter.Gro
                 @Override
                 public void execute(final Group group) {
                     holder.vName.setText(group.group_name);
+                    holder.addSelFriendBtn.setText("Join");
+                    holder.addSelFriendBtn.setVisibility(View.VISIBLE);
                //     holder.vEmail.setText("Email:            " + user.email);
               //      holder.vLocation.setText("Location:      " + user.location);
 
@@ -94,7 +96,7 @@ public class GroupListAdapter  extends RecyclerView.Adapter<GroupListAdapter.Gro
                              /*       holder.addSelFriendBtn.setVisibility(View.GONE);
                                     holder.acceptReqBtn.setText("Friends");
                                     holder.acceptReqBtn.setClickable(false);*/
-                                    holder.addSelFriendBtn.setText("Katıldınız");
+                                    holder.addSelFriendBtn.setText("Join");
                                     holder.addSelFriendBtn.setClickable(false);
                                 }
                             }

@@ -194,6 +194,58 @@ public class LoginActivity extends AppCompatActivity {
                         mProgressDialog.dismiss();
                         UserAuth.getInstance().setCurrentUser(user);
                         launchMainActivity();
+                    } else {
+                   /*     final User user = new User();
+                        user.id = fbUser.getUid();
+                        user.email = fbUser.getEmail();
+                        user.first_name = mFirstNameEt.getText().toString();
+                        user.last_name = mLastNameEt.getText().toString();
+                        user.status = 1;
+                        user.notification = true;
+                        user.token = token;
+                        user.pushNotification = true;
+
+                        ref.child(fbUser.getUid()).setValue(user);
+                        mProgressDialog.dismiss();
+                        UserAuth.getInstance().setCurrentUser(user);
+
+*/
+                 /*       mNextBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                user.unique_id = mUniqueId.getText().toString();
+
+                                if (TextUtils.isEmpty(user.unique_id)) {
+                                    mUniqueId.setError("Required.");
+                                    return;
+                                } else {
+                                    ref.orderByChild("unique_id").equalTo(user.unique_id).addListenerForSingleValueEvent(new ValueEventListener() {
+
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                            if(dataSnapshot.exists()) {
+                                                Toast.makeText(LoginActivity.this, "Username Is Already Taken",
+                                                        Toast.LENGTH_LONG).show();
+                                            }
+                                            else {
+                                                ref.child(fbUser.getUid()).setValue(user);
+                                                UserAuth.getInstance().setCurrentUser(user);
+                                                launchMainActivity();
+                                                Log.d(TAG, "Successfully create user in db");
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(DatabaseError databaseError) {
+
+                                        }
+                                    });
+                                }
+
+
+                            }
+                        });*/
+
                     }
                 }
 

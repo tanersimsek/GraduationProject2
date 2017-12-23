@@ -18,10 +18,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import cmpe.sjsu.socialawesome.Utils.TokenBroadcastReceiver;
 import cmpe.sjsu.socialawesome.Utils.UserAuth;
 import cmpe.sjsu.socialawesome.models.PushMessageContent;
+import cmpe.sjsu.socialawesome.models.User;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -140,17 +144,29 @@ public class RegisterActivity extends AppCompatActivity {
                         mProgressDialog.dismiss();
                         if (task.isSuccessful()) {
                             Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseUser fbUser = mAuth.getCurrentUser();
                             //successLogin(mAuth.getCurrentUser());
                             sendEmailVerification();
-
-
+                            final String token = FirebaseInstanceId.getInstance().getToken();
+                            final User user = new User();
+                            user.id = fbUser.getUid();
+                            user.email = fbUser.getEmail();
+                            user.first_name = mFirstNameEt.getText().toString();
+                            user.last_name = mLastNameEt.getText().toString();
+                            user.status = 1;
+                            user.notification = true;
+                            user.token = token;
+                            user.pushNotification = true;
+                            final DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child(USERS_TABLE);
+                            ref.child(fbUser.getUid()).setValue(user);
+                          //  mProgressDialog.dismiss();
+                            UserAuth.getInstance().setCurrentUser(user);
                          /*   mVerifyAccount.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     sendEmailVerification();
                                 }
-
+//burock5194@gmail.com
                             });*/
 
                             mResendVerification.setOnClickListener(new View.OnClickListener() {
