@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     android:orientation="vertical">
 
     <EditText
@@ -25,7 +26,7 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        android:text="tnrsmsk@yandex.com.tr"/>
+        android:text="tnrsmsk@yandex.com.tr" />
 
     <EditText
         android:id="@+id/password"
@@ -33,8 +34,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:text="1234567"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:text="1234567" />
 
     <EditText
         android:id="@+id/uniqueSV"
@@ -46,19 +47,19 @@
 
     <EditText
         android:id="@+id/verifySV"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="4 digit verification ID"
         android:inputType="number"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:text="@string/login"
+        android:text="Login"
         android:textColor="@color/cardview_light_background" />
 
     <Button
