@@ -57,6 +57,15 @@
                 android:layout_below="@id/timeline_attachment"
                 android:layout_width="100dp"
                 android:layout_height="35dp" />
+            <TextView
+                android:id="@+id/likeCounter"
+                android:layout_alignParentRight="true"
+                android:text="30 kişi Beğendi"
+                android:layout_width="100dp"
+                android:layout_below="@id/likeBtn"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                android:layout_height="20dp" />
 
         </RelativeLayout>
 
