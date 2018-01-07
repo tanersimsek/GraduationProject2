@@ -41,6 +41,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -95,7 +96,7 @@ public class ProfileFragment extends SocialFragment {
     private String currentUserId;
     private MainActivity activity;
     private ProgressDialog pd;
-
+    private int begenisayisi;
     private RecyclerView mTimelineListView;
     private ArrayList<Post> postList;
 
@@ -194,8 +195,23 @@ public class ProfileFragment extends SocialFragment {
                                 while (postIterator.hasNext()) {
                                     Map.Entry entry = (Map.Entry) postIterator.next();
                                     HashMap postMap = (HashMap) entry.getValue();
-                                    Post post = new Post(user, (long) postMap.get("timestamp"),
-                                            (String) postMap.get("contentPost"), (String) postMap.get("contentPhotoURL"));
+
+                                    String count=postMap.get("begeniler").toString();
+
+                                    String[] countryLines = count.split("=");
+                                    int countryLineCount = countryLines.length;
+                                    DatabaseReference TableRef;
+                                    begenisayisi=0;
+                                    for(int i=2;i<=countryLineCount;i=i+2)
+                                    {
+                                        String temp=countryLines[i].substring(0,27);
+                                        begenisayisi++;
+                                        //  begeniIDler2.add(temp);
+
+                                    }
+
+                                    Post post = new Post( (String) postMap.get("ID"),user, (long) postMap.get("timestamp"),
+                                            (String) postMap.get("contentPost"), (String) postMap.get("contentPhotoURL"),(List<String>) postMap.get("begeniler"),begenisayisi);
                                     postList.add(post);
                                 }
                             }

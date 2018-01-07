@@ -30,7 +30,9 @@ public class User implements Serializable {
     public String interest;
     public String token;
     public String unique_id;
-
+    public String Oneri1;
+    public String Oneri2;
+    public String Oneri3;
     // 0 -- disable
     // 1 -- friends only view
     // 2 -- public

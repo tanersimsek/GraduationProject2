@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
         mDrawerListTitles.add(getString(R.string.timeline));
+        mDrawerListTitles.add("Keşfet");
         mDrawerListTitles.add(getString(R.string.profile));
         mDrawerListTitles.add(getString(R.string.friends));
         mDrawerListTitles.add(getString(R.string.title_inmail));
@@ -67,42 +68,48 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new TimeLineFragment();
                         break;
                     case 1:
+                        //keşfet
+                        title = "Keşfet";
+                        isOtherUser = false;
+                        fragment = new ExploreFragment();
+                        break;
+                    case 2:
                         //Profile
                         title = getString(R.string.profile);
                         isOtherUser = false;
                         fragment = new ProfileFragment();
                         break;
-                    case 2:
+                    case 3:
                         //Friends
                         title = getString(R.string.friends);
                         fragment = new FriendFragment();
                         break;
-                    case 3:
+                    case 4:
                         //In Mail List
                         intent = new Intent(MainActivity.this, InMailActivity.class);
                         intent.putExtra(InMailActivity.ACTION_EXTRA, InMailActivity.ACTION_LIST);
                         startActivity(intent);
                         return;
-                    case 4:
+                    case 5:
                         intent = new Intent(MainActivity.this, PrivateMessageActivity.class);
                         intent.putExtra(PrivateMessageActivity.ACTION_EXTRA, PrivateMessageActivity.ACTION_LIST);
                         startActivity(intent);
                         return;
-                    case 5:
+                    case 6:
                         //Gruplar
                         title = "Gruplar";
                         fragment = new GroupFragment();
                         break;
-                    case 6:
+                    case 7:
                         //Setting
                         title = getString(R.string.setting);
                         fragment = new SettingFragment();
                         break;
-                    case 7:
+                    case 8:
                         //Sign Out
                         signOut();
                         FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(MainActivity.this, StartActivity.class));
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         return;
                     default:
                         break;

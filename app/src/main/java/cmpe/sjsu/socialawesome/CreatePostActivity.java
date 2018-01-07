@@ -10,8 +10,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +35,12 @@ public class CreatePostActivity extends AppCompatActivity {
     private EditText contentText;
     private StorageReference storageRef = FirebaseStorage.getInstance().getReference();
     private Uri filePath;
+    private String tur1,tur2,tur3;
     private ImageView contentPicView;
     private ProgressDialog pd;
+    private String[] postturler={"diger","eglence","ask","manzara","hayata dair","gundem","haber"};
+    private Spinner firstSpinner,secondSpinner,thirdSpinner;
+    private ArrayAdapter<String> dataAdapterForTurler;
 
     private static int UPLOAD_REQUEST = 31;
 
@@ -42,6 +50,60 @@ public class CreatePostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_post);
         contentText = (EditText) findViewById(R.id.post_content);
         contentPicView = (ImageView) findViewById(R.id.post_pic);
+        firstSpinner = (Spinner) findViewById(R.id.first_spinner);
+        secondSpinner = (Spinner) findViewById(R.id.second_spinner);
+        thirdSpinner = (Spinner) findViewById(R.id.third_spinner);
+
+        dataAdapterForTurler = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, postturler);
+        dataAdapterForTurler.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        firstSpinner.setAdapter(dataAdapterForTurler);
+        secondSpinner.setAdapter(dataAdapterForTurler);
+        thirdSpinner.setAdapter(dataAdapterForTurler);
+
+        firstSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                //Seçilen il ve ilçeyi ekranda gösteriyoruz.
+                //Toast.makeText(getBaseContext(), ""+firstSpinner.getSelectedItem().toString()+"n"+parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                tur1=firstSpinner.getSelectedItem().toString();
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        secondSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                //Seçilen il ve ilçeyi ekranda gösteriyoruz.
+                //Toast.makeText(getBaseContext(), ""+secondSpinner.getSelectedItem().toString()+"n"+parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                tur2=secondSpinner.getSelectedItem().toString();
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        thirdSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                //Seçilen il ve ilçeyi ekranda gösteriyoruz.
+               // Toast.makeText(getBaseContext(), ""+thirdSpinner.getSelectedItem().toString()+"n"+parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                tur3=thirdSpinner.getSelectedItem().toString();
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
 
         pd = new ProgressDialog(this);
         pd.setCancelable(false);
@@ -67,6 +129,10 @@ public class CreatePostActivity extends AppCompatActivity {
         if (id == R.id.post) {
             final Intent data = new Intent();
             data.putExtra(TimeLineFragment.POST_CONTENT_KEY, contentText.getText().toString());
+            data.putExtra(TimeLineFragment.tur1,tur1);
+            data.putExtra(TimeLineFragment.tur2,tur2);
+            data.putExtra(TimeLineFragment.tur3,tur3);
+
             if (filePath == null) {
                 setResult(TimeLineFragment.RESULT_OK, data);
                 finish();
