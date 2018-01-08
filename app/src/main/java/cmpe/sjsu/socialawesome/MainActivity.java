@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         //keşfet
                         title = "Keşfet";
-                        isOtherUser = false;
                         fragment = new ExploreFragment();
                         break;
                     case 2:

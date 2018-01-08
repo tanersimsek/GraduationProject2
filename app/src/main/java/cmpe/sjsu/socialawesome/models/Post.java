@@ -3,7 +3,6 @@ package cmpe.sjsu.socialawesome.models;
 import android.support.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -12,14 +11,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
-import cmpe.sjsu.socialawesome.GroupListAdapter;
 import cmpe.sjsu.socialawesome.TimeLineFragment;
 
 import static cmpe.sjsu.socialawesome.StartActivity.USERS_TABLE;
@@ -38,6 +33,7 @@ public class Post implements Comparable<Post>{
     public int begenisayisi=0;
     private TimeLineFragment mActivity;
     private String key2;
+    public static final String TAG = Post.class.getSimpleName();
     public String tur1,tur2,tur3;
     public List<String> begeniler,begeniler2;
     public Post(String ID,User user, long timestamp, String contentPost, String contentPhotoURL,List<String> begeniler,int begenisayisi) {
@@ -63,6 +59,8 @@ public class Post implements Comparable<Post>{
         result.put("tur2",tur2);
         result.put("tur3",tur3);
         result.put("userid",user.id);
+        result.put("user_firstname",user.first_name);
+        result.put("user_lastname",user.last_name);
         return result;
     }
 

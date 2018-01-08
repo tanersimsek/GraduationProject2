@@ -260,7 +260,7 @@ public class AprioriFrequentItemsetGenerator<I> {
                     supportCountMap.put(tmp, 1);
                 }
 
-                map.put(item, map.getOrDefault(item, 0) + 1);
+                map.put(item, map.getOrDefault(item,0) + 1);
             }
         }
 

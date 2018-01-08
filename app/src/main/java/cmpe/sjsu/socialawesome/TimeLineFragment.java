@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,27 +19,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.ListIterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 import cmpe.sjsu.socialawesome.Utils.HTTPUtil;
 import cmpe.sjsu.socialawesome.Utils.UserAuth;
 import cmpe.sjsu.socialawesome.adapters.TimeLineAdapter;
 import cmpe.sjsu.socialawesome.apriori.AprioriFrequentItemsetGenerator;
-import cmpe.sjsu.socialawesome.apriori.FrequentItemsetData;
 import cmpe.sjsu.socialawesome.models.Post;
 import cmpe.sjsu.socialawesome.models.User;
-import java.util.List;
-
-import java.util.Arrays;
-import java.util.HashSet;
-
-import java.util.Set;
 
 import static cmpe.sjsu.socialawesome.StartActivity.USERS_TABLE;
 
@@ -63,11 +54,15 @@ public class TimeLineFragment extends SocialFragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Post> postList;
     private DatabaseReference currentUserRef;
+    private DatabaseReference TableRef2;
     private DatabaseReference userTableRef;
     private DatabaseReference PostsRef;
     private ProgressDialog progress;
     private ArrayList<String> emails;
     public List<String> bosuserlist;
+    private AprioriFrequentItemsetGenerator<String> generator =
+            new AprioriFrequentItemsetGenerator<>();
+    private List<Set<String>> itemsetList = new ArrayList<>();
     public List<String> begeniIDler,begeniIDler2;
     public    int begenisayisi=0;
     public String tur11,tur22,tur33;
@@ -101,6 +96,7 @@ public class TimeLineFragment extends SocialFragment {
         progress.show();
         userTableRef = FirebaseDatabase.getInstance().getReference().child(USERS_TABLE);
         currentUserRef = userTableRef.child(UserAuth.getInstance().getCurrentUser().id);
+
         PostsRef=FirebaseDatabase.getInstance().getReference().child(FIREBASE_POST_KEY);
         mLayoutManager = new LinearLayoutManager(getContext());
         mTimelineListView.setLayoutManager(mLayoutManager);
@@ -221,6 +217,31 @@ public class TimeLineFragment extends SocialFragment {
                             final String contentPost=(String) postMap.get("contentPost");
                             final String contentPhotoURL=(String) postMap.get("contentPhotoURL");
 
+                  /*      String s1 =(String) postMap.get("tur1");
+                        String s2=(String) postMap.get("tur2");
+                        String s3=(String) postMap.get("tur3");
+                        Log.d(TAG, "Test2 = " );
+                        if(s1.equals("diger")&&s2.equals("diger"))
+                        {   itemsetList.add(new HashSet<>(Arrays.asList(s3)));}
+                        else if(s1.equals("diger")&&s3.equals("diger"))
+                        {   itemsetList.add(new HashSet<>(Arrays.asList(s2)));}
+                        else if(s3.equals("diger")&&s2.equals("diger"))
+                        {   itemsetList.add(new HashSet<>(Arrays.asList(s1)));}
+                        else if(s1.equals("diger"))
+                        {   itemsetList.add(new HashSet<>(Arrays.asList(s2,s3)));}
+                        else  if(s2.equals("diger"))
+                        {   itemsetList.add(new HashSet<>(Arrays.asList(s1,s3)));}
+                        else  if(s3.equals("diger"))
+                        {   itemsetList.add(new HashSet<>(Arrays.asList(s1,s2)));}
+                        else  if(s1.equals("diger")&&s2.equals("diger")&&s3.equals("diger"))
+                        { String hatasiz="kul"; }
+                        else{
+                            itemsetList.add(new HashSet<>(Arrays.asList(s1,s2,s3)));
+                        }
+*/
+
+
+
                         begenisayisi=0;
                         if(postMap.get("begeniler")!=null)
                         {
@@ -266,9 +287,9 @@ public class TimeLineFragment extends SocialFragment {
 
                                 }
                             });*/
-                        DatabaseReference TableRef2;
-                        TableRef2 = FirebaseDatabase.getInstance().getReference().child(USERS_TABLE).child(UserAuth.getInstance().getCurrentUser().id).child("posts").child(IDdeneme);
+                        //DatabaseReference TableRef2;
 
+                        TableRef2 = FirebaseDatabase.getInstance().getReference().child(USERS_TABLE).child(UserAuth.getInstance().getCurrentUser().id).child("posts").child(IDdeneme);
                         TableRef2.child("begenisayisi").setValue(begenisayisi);
 
 
@@ -382,6 +403,43 @@ public class TimeLineFragment extends SocialFragment {
                         }
                     }
                 }
+
+            /*    FrequentItemsetData<String> data = generator.generate(itemsetList, 0.2);
+                int i = 1;
+                Set<String> Oneri = null,Oneri2=null,Oneri3=null;
+
+                double max1=0,max2=0,max3=0,oran;
+                for (Set<String> itemset : data.getFrequentItemsetList()) {
+
+                    //Oneri=itemset;
+//Oneri2= itemsetList.get(i);
+                    // Oneri=itemset;
+                    oran=data.getSupport(itemset);
+                    i++;
+                    if(oran>max1) {
+                        max1 = oran;
+                        Oneri=itemset;
+                    }
+                    else if(oran>max2){
+                        Oneri2=itemset;
+                        max2=oran;}
+                    else  if(oran>max3){
+                        Oneri3=itemset;
+                        max3=oran;}
+                }
+
+                // int sayi=Oneri.size();
+                UserAuth.getInstance().getCurrentUser().Oneri1=Oneri.toString();
+                UserAuth.getInstance().getCurrentUser().Oneri2=Oneri2.toString();
+                UserAuth.getInstance().getCurrentUser().Oneri3=Oneri3.toString();
+                FirebaseAuth mAuth;
+                mAuth = FirebaseAuth.getInstance();
+                String userid=mAuth.getCurrentUser().getUid().toString();
+
+                TableRef2.child("Oneri1").setValue(Oneri.toString());
+                TableRef2.child("Oneri2").setValue(Oneri2.toString());
+                TableRef2.child("Oneri3").setValue(Oneri3.toString());
+                TableRef2=FirebaseDatabase.getInstance().getReference().child("users").child(userid);*/
                 Collections.sort(postList);
                 mAdapter = new TimeLineAdapter(postList);
                 mTimelineListView.setAdapter(mAdapter);
