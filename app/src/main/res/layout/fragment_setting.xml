@@ -4,16 +4,18 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:layout_marginTop="175dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical">
 
         <TextView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Visibility Setting"
+            android:text="Görünürlük Ayarları"
             android:textSize="20dp" />
 
         <RadioGroup
@@ -25,24 +27,25 @@
                 android:id="@+id/radio_private"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Private" />
+                android:text="Gizli" />
 
             <RadioButton
                 android:id="@+id/radio_public"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Public" />
+                android:text="Herkese Açık" />
 
             <RadioButton
                 android:id="@+id/radio_friend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Friend Only" />
+                android:text="Sadece Arkadaşlar" />
 
         </RadioGroup>
 
 
         <TextView
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -51,12 +54,14 @@
             android:textSize="20dp" />
 
         <RadioGroup
+            android:visibility="gone"
             android:id="@+id/radioGroup2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
+
                 android:id="@+id/radio_yes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,6 +75,7 @@
         </RadioGroup>
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/pushNoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,6 +85,7 @@
             android:textSize="20dp" />
 
         <RadioGroup
+            android:visibility="gone"
             android:id="@+id/pushNoRadioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

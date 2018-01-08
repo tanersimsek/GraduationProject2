@@ -58,7 +58,6 @@ import static cmpe.sjsu.socialawesome.StartActivity.USERS_TABLE;
 import static cmpe.sjsu.socialawesome.models.User.FOLOWING_FRIEND_LIST;
 import static cmpe.sjsu.socialawesome.models.User.FRIEND_LIST;
 import static cmpe.sjsu.socialawesome.models.User.PENDING_FRIEND_LIST;
-import static cmpe.sjsu.socialawesome.models.User.WAITING_FRIEND_LIST;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -99,7 +98,7 @@ public class ProfileFragment extends SocialFragment {
     private int begenisayisi;
     private RecyclerView mTimelineListView;
     private ArrayList<Post> postList;
-
+    public List<String> bosuserlist;
     MenuItem mFollowItem;
     MenuItem mAddFriendItem;
     MenuItem mNewInMailItem;
@@ -195,23 +194,25 @@ public class ProfileFragment extends SocialFragment {
                                 while (postIterator.hasNext()) {
                                     Map.Entry entry = (Map.Entry) postIterator.next();
                                     HashMap postMap = (HashMap) entry.getValue();
+                                   // String count=postMap.get("begeniler").toString();
+                                    String count2=postMap.get("begenisayisi").toString();
+                                    begenisayisi=Integer.parseInt(count2);
+                                  //  String count=postMap.get("begeniler").toString();
 
-                                    String count=postMap.get("begeniler").toString();
-
-                                    String[] countryLines = count.split("=");
-                                    int countryLineCount = countryLines.length;
-                                    DatabaseReference TableRef;
-                                    begenisayisi=0;
+                                   // String[] countryLines = count.split("=");
+                                   // int countryLineCount = countryLines.length;
+                                   // DatabaseReference TableRef;
+                                  /*  begenisayisi=0;
                                     for(int i=2;i<=countryLineCount;i=i+2)
                                     {
                                         String temp=countryLines[i].substring(0,27);
                                         begenisayisi++;
                                         //  begeniIDler2.add(temp);
 
-                                    }
+                                    }*/
 
                                     Post post = new Post( (String) postMap.get("ID"),user, (long) postMap.get("timestamp"),
-                                            (String) postMap.get("contentPost"), (String) postMap.get("contentPhotoURL"),(List<String>) postMap.get("begeniler"),begenisayisi);
+                                            (String) postMap.get("contentPost"), (String) postMap.get("contentPhotoURL"),bosuserlist,begenisayisi);
                                     postList.add(post);
                                 }
                             }

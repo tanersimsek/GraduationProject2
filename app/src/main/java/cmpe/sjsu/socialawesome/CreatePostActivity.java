@@ -152,8 +152,9 @@ public class CreatePostActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+
+                        Toast.makeText(getApplicationContext(), "Upload failed "+e.getMessage(), Toast.LENGTH_LONG);
                         pd.dismiss();
-                        Toast.makeText(getApplicationContext(), "Upload failed", Toast.LENGTH_LONG);
                     }
                 });
             }

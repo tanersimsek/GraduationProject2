@@ -70,9 +70,15 @@ public class AprioriFrequentItemsetGenerator<I> {
                         transaction);
 
                 for (Set<I> itemset : candidateList2) {
-                    supportCountMap.put(itemset,
+
+                    Integer value = supportCountMap.get(itemset);
+                    if (value == null) {
+                        value = 0;
+                    }
+                    supportCountMap.put(itemset, value + 1);
+                  /*  supportCountMap.put(itemset,
                             supportCountMap.getOrDefault(itemset,
-                                    0) + 1);
+                                    0) + 1);*/
                 }
             }
 
@@ -254,13 +260,25 @@ public class AprioriFrequentItemsetGenerator<I> {
                 Set<I> tmp = new HashSet<>(1);
                 tmp.add(item);
 
+
                 if (supportCountMap.containsKey(tmp)) {
                     supportCountMap.put(tmp, supportCountMap.get(tmp) + 1);
-                } else {
+                }
+                else {
                     supportCountMap.put(tmp, 1);
                 }
+                Integer value=map.get(item);
+                int a=5;
+                if(value==null)
+                {
+                    value=0;
+                    map.put(item,value+1);
 
-                map.put(item, map.getOrDefault(item,0) + 1);
+                }
+                else{
+                    map.put(item,map.get(item)+1);
+                }
+              // map.put(item, map.getOrDefault(item,0) + 1);
             }
         }
 
@@ -294,4 +312,5 @@ public class AprioriFrequentItemsetGenerator<I> {
                             "should be at least 0.0");
         }
     }
+
 }
